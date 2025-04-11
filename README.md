@@ -21,3 +21,5 @@ cd rickandmorty
 npm install
 npm start
 
+## END
+
