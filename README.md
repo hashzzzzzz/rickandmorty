@@ -16,8 +16,10 @@ This is a React-based project that fetches and displays character data from the 
 - Intersection Observer API
 
 ## Getting Started
-Clone the repository: git clone https://github.com/hashzzzzzz/rickandmorty.git
-cd rickandmorty
-npm install
+Clone the repository:
+git clone https://github.com/hashzzzzzz/rickandmorty.git
+
+## Open folder that u cloned
+npm install --legacy-peer-deps
 npm start
 
