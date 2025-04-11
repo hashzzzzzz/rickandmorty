@@ -1,38 +1,322 @@
-.App {
-  text-align: center;
+.fancy-btn {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  border: none;
+  display: block;
+  position: relative;
+  padding: 0.7em 2.4em;
+  font-size: 18px;
+  cursor: pointer;
+  user-select: none;
+  overflow: hidden;
+  z-index: 1;
+  font-family: inherit;
+  background: transparent;
+  border: 4px solid royalblue;
+  color: royalblue;
+  font-weight: 500;
+  transition: background 0.3s ease, color 0.3s ease;
+  width: auto;
+  width: 300px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.inputs-container {
+  margin-left: 19px;
+  margin-right: 19px;
+  padding: 20px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  flex-direction: row;
+  gap: 20px;
+  align-items: flex-end;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #006bb3, #2575fc, #4c9aff);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.fancy-btn span {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  z-index: -1;
+  border: 4px solid royalblue;
+}
+
+.fancy-btn span::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 8%;
+  height: 500%;
+  background: var(--lightgray, #f0f0f0);
+  top: 50%;
+  left: 50%;
+  transform: translate(-45%, -50%) rotate(-60deg);
+  transition: all 0.3s;
+}
+
+.fancy-btn:hover span::before {
+  transform: translate(-50%, -50%) rotate(-90deg);
+  width: 100%;
+  background: royalblue;
+}
+
+.fancy-btn:hover {
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.fancy-btn:active span::before {
+  background: #2751cd;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.buttongroup {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 0;
+  flex-wrap: wrap;
+}
+
+.select {
+  margin-top: 20px;
+  justify-content: space-between;
+  display: flex;
+  gap: 30px;
+  margin-left: 0px;
+  width: fit-content;
+  cursor: pointer;
+  position: relative;
+  transition: 300ms;
+  color: white;
+  overflow: hidden;
+  margin-bottom: 0px;
+}
+
+.select .selected {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.select label {
+  font-size: 16px;
+  color: white;
+}
+
+.selected {
+  background-color: #2a2f3b;
+  padding: 5px;
+  margin-bottom: 3px;
+  border-radius: 5px;
+  position: relative;
+  z-index: 100000;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.select select {
+  background-color: #2a2f3b;
+  color: white;
+  border: none;
+  padding: 5px;
+  font-size: 15px;
+  border-radius: 5px;
+}
+
+.select select:focus {
+  outline: none;
+}
+
+.fancy-btn.language-btn {
+  font-size: 16px;
+  border-color: #4b8dff;
+  background: #f0f0f0;
+  color: #333;
+  padding: 0.6em 2.2em;
+  transition: all 0.3s;
+}
+
+.fancy-btn.language-btn:hover {
+  background: #4b8dff;
+  color: white;
+}
+
+.fancy-btn.language-btn:active {
+  background: #2751cd;
+}
+
+@media (max-width: 1024px) {
+  .fancy-btn {
+    padding: 0.6em 2em;
+    font-size: 16px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .select {
+    margin-left: 40px;
+    gap: 20px;
   }
+
+  .select select {
+    width: 180px;
+    font-size: 14px;
+  }
+
+  .buttongroup {
+    flex-direction: row;
+    gap: 1rem;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .fancy-btn {
+    padding: 0.5em 1.8em;
+    font-size: 16px;
+    width: auto;
+  }
+
+  .select {
+    margin-left: 20px;
+    gap: 15px;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .inputs-container {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+
+  .select .selected {
+    width: 200px;
+    margin-bottom: 10px;
+  }
+
+  .select select {
+    width: 180px;
+    font-size: 14px;
+  }
+
+  .select label {
+    font-size: 14px;
+  }
+
+  .buttongroup {
+    margin-left: 60px;
+    flex-direction: row;
+    gap: 1rem;
+    justify-content: center;
+  }
+
+  .fancy-btn.language-btn {
+    font-size: 14px;
+    padding: 0.5em 1.8em;
+    margin: 10px auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .fancy-btn {
+    padding: 0.4em 1.5em;
+    font-size: 14px;
+    width: auto;
+    min-width: 150px;
+  }
+
+  .select {
+    margin-left: 10px;
+    gap: 10px;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .select .selected {
+    width: 200px;
+    max-height: 100px;
+    margin-bottom: 8px;
+  }
+
+  .select select {
+    width: 130px;
+    font-size: 12px;
+  }
+
+  .select label {
+    font-size: 13px;
+  }
+
+  .footer {
+    padding-right: 0px;
+    margin-left: 0px;
+  }
+
+  .buttongroup {
+    margin-left: 0;
+    flex-direction: row;
+    gap: 0.3rem;
+    justify-content: center;
+  }
+}
+
+footer {
+  padding: 20px;
+  background-color: #f1f1f1;
+  text-align: center;
+  position: sticky;
+  bottom: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+footer .buttongroup {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+footer {
+  padding: 20px;
+  background-color: #006bb3;
+  color: white;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 1000;
+  font-size: 14px;
+}
+
+footer .buttongroup {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.App > div {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding-bottom: 60px;
+}
+
+.scroll-container {
+  position: relative;
+  height: 100%;
+  overflow-y: auto;
 }

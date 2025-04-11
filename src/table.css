@@ -1,0 +1,127 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+.table-container {
+    width: 100%;
+    max-width: 100%;
+    margin-top: 0;
+    margin-bottom: 10px;  
+    overflow-x: auto;
+    padding: 0 20px 20px 20px;
+    box-sizing: border-box;
+}
+.inputs-container {
+    margin: 0;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: flex-start;
+  }
+
+.custom-table {
+    margin-top: 0;
+    width: 100%;
+    min-width: 600px;
+    border-collapse: collapse;
+    background-color: #f4f7fc;
+    color: #333;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.custom-table thead {
+    background-color: #4c9aff;
+    color: #fff;
+    text-align: left;
+    font-size: 16px;
+}
+
+.custom-table th,
+.custom-table td {
+    padding: 12px 15px;
+    text-align: left;
+}
+
+.custom-table th {
+    background-color: #006bb3;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.custom-table tbody tr {
+    background-color: #eaf2f7;
+    transition: background-color 0.3s ease, transform 0.2s ease-in-out;
+}
+
+.custom-table tbody tr:hover {
+    background-color: #a6d8ff;
+    transform: scale(1.02);
+    font-weight: bold;
+}
+
+.custom-table tbody tr:nth-child(even) {
+    background-color: #d4e5f3;
+}
+
+.custom-table tbody tr:nth-child(odd) {
+    background-color: #eaf2f7;
+}
+
+.custom-table td {
+    font-size: 14px;
+    color: #555;
+}
+
+.custom-table td a {
+    color: #4caf50;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.custom-table td a:hover {
+    color: #2e7d32;
+    
+}
+
+
+@media (max-width: 1024px) {
+    .custom-table {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 768px) {
+    .custom-table {
+        font-size: 13px;
+    }
+
+    .custom-table th,
+    .custom-table td {
+        padding: 10px 12px;
+    }
+
+    .custom-table {
+        min-width: 500px;
+    }
+}
+
+@media (max-width: 480px) {
+    .table-container {
+        padding: 10px;
+    }
+
+    .custom-table {
+        font-size: 12px;
+        min-width: 400px;
+    }
+
+    .custom-table th,
+    .custom-table td {
+        padding: 8px 10px;
+    }
+}
