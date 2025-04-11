@@ -15,11 +15,9 @@ This is a React-based project that fetches and displays character data from the 
 - Styled Components
 - Intersection Observer API
 
-## 🚀 Getting Started
+## Getting Started
+Clone the repository: git clone https://github.com/hashzzzzzz/rickandmorty.git
+cd rickandmorty
 npm install
+npm start
 
-1. Clone the repository:
-
-```bash
-git clone https://github.com/your-username/your-repo-name.git
-cd your-repo-name
