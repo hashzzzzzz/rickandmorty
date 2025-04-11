@@ -23,3 +23,5 @@ git clone https://github.com/hashzzzzzz/rickandmorty.git
 npm install --legacy-peer-deps
 npm start
 
+## END
+
